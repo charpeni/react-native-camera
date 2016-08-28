@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import {
   Image,
@@ -68,7 +69,7 @@ export default class Example extends React.Component {
         orientation: Camera.constants.Orientation.auto,
         flashMode: Camera.constants.FlashMode.auto,
       },
-      isRecording: false
+      isRecording: false,
     };
 
     this.takePicture = this.takePicture.bind(this);
@@ -88,11 +89,11 @@ export default class Example extends React.Component {
 
   startRecording() {
     if (this.camera) {
-      this.camera.capture({mode: Camera.constants.CaptureMode.video})
+      this.camera.capture({ mode: Camera.constants.CaptureMode.video })
           .then((data) => console.log(data))
           .catch(err => console.error(err));
       this.setState({
-        isRecording: true
+        isRecording: true,
       });
     }
   }
@@ -101,7 +102,7 @@ export default class Example extends React.Component {
     if (this.camera) {
       this.camera.stopCapture();
       this.setState({
-        isRecording: false
+        isRecording: false,
       });
     }
   }
@@ -212,38 +213,38 @@ export default class Example extends React.Component {
           {
             !this.state.isRecording
             &&
-            <TouchableOpacity
+              <TouchableOpacity
                 style={styles.captureButton}
                 onPress={this.takePicture}
-            >
-              <Image
+              >
+                <Image
                   source={require('./assets/ic_photo_camera_36pt.png')}
-              />
-            </TouchableOpacity>
+                />
+              </TouchableOpacity>
             ||
-            null
+              null
           }
           <View style={styles.buttonsSpace} />
           {
               !this.state.isRecording
               &&
-              <TouchableOpacity
+                <TouchableOpacity
                   style={styles.captureButton}
                   onPress={this.startRecording}
-              >
-                <Image
+                >
+                  <Image
                     source={require('./assets/ic_videocam_36pt.png')}
-                />
-              </TouchableOpacity>
+                  />
+                </TouchableOpacity>
               ||
-              <TouchableOpacity
+                <TouchableOpacity
                   style={styles.captureButton}
                   onPress={this.stopRecording}
-              >
-                <Image
+                >
+                  <Image
                     source={require('./assets/ic_stop_36pt.png')}
-                />
-              </TouchableOpacity>
+                  />
+                </TouchableOpacity>
           }
         </View>
       </View>

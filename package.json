@@ -1,8 +1,8 @@
 {
   "name": "react-native-camera",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/lwansbrough/react-native-camera.git"
+    "type": "git",
+    "url": "https://github.com/lwansbrough/react-native-camera.git"
   },
   "version": "0.3.8",
   "description": "A Camera component for React Native. Also reads barcodes.",
@@ -18,5 +18,20 @@
     "qr",
     "code",
     "barcode"
-  ]
+  ],
+  "scripts": {
+    "eslint": "eslint .; exit 0;"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.0",
+    "eslint-plugin-react": "^6.2.0"
+  }
 }
